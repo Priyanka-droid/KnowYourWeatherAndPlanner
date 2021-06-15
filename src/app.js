@@ -38,13 +38,13 @@ app.get("/mail", (req, res) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: `KnowYourWeatherAndPlan`,
+      user: `KnowYourWeatherAndPlan@gmail.com`,
       pass: `${process.env.PASS}`,
     },
   });
 
   var mailOptions = {
-    from: `KnowYourWeatherAndPlan`,
+    from: `KnowYourWeatherAndPlan@gmail.com`,
     to: `${req.query.msg[0]}`,
     subject: "Sending Email using Node.js",
     text: `${req.query.msg[1]}`,
